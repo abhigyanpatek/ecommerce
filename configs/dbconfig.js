@@ -1,8 +1,8 @@
-module.exports={
+module.exports = {
     HOST: '127.0.0.1',
     PORT: 3306,
     USER: 'root',
-    PASSWORD: 'root',
+    PASSWORD: process.env.PASSWORD,
     DB: 'ecom_db',
     dialect: 'mysql',
     pool: {

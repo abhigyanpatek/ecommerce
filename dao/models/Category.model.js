@@ -14,7 +14,6 @@ const defineCategory = (conn, DataTypes) => {
             type: DataTypes.STRING
         }
     });
-    
     return Category;
 }
 

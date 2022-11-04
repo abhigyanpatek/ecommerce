@@ -1,9 +1,9 @@
 const config = require('../../configs/dbconfig');
-const {Sequelize, DataTypes} = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
 const connection = new Sequelize(
-    config.DB, 
-    config.USER, 
+    config.DB,
+    config.USER,
     config.PASSWORD,
     {
         host: config.HOST,
