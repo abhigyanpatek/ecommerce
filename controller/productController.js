@@ -16,7 +16,7 @@ const createProduct = (req, res) => {
         res.status(201).send(result);
     }).catch(error => {
         if(error.name === errorConstants.UNIQUE_KEY_CONSTRAINT_VALIDATION_ERROR){
-            console.log(error.errors[0]);
+            console.log(error.message);
             res.status(400).send({
                 message: `Product name: ${body.name} already exists!`
             });
