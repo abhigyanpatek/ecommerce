@@ -33,7 +33,9 @@ const fetchAllCategories = (req, res) => {
         res.status(200).send(categories);
     }).catch(error => {
         console.log(error.message);
-        res.status(500).send("Error in loading all categories, Please try again after sometime!");
+        res.status(500).send({
+            message: "Error in loading all categories, Please try again after sometime!"
+        });
     })
 }
 

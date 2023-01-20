@@ -32,5 +32,6 @@ const fetchUserByCriteria = async (criteria) => {
 module.exports = {
     createUserTable: createUserTable,
     registerUser: registerUser,
-    fetchUserByCriteria: fetchUserByCriteria
+    fetchUserByCriteria: fetchUserByCriteria,
+    User
 }

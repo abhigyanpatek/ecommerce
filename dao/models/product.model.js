@@ -19,10 +19,6 @@ const defineProduct = (conn, DataTypes) => {
         price: {
             type: DataTypes.INTEGER,
             defaultValue: 0
-        },
-        categoryId: {
-            type: DataTypes.INTEGER,
-            allowNull: false
         }
     });
     return Product;

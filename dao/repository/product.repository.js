@@ -7,7 +7,7 @@ const Product = defineProduct(dbConnection.connection, dbConnection.DataTypes);
 const createProductTable = async (forceCreation) => {
     const Category = defineCategory(dbConnection.connection, dbConnection.DataTypes);
     Product.belongsTo(Category, {
-        foriegnKey: 'categoryId',
+        foreignKey: 'categoryId',
         targetKey: 'id'
     });
     await Product.sync({force: forceCreation});
@@ -40,5 +40,6 @@ module.exports = {
     createMultipleProducts: createMultipleProducts,
     fetchProductById: fetchProductById,
     fetchAllProducts: fetchAllProducts,
-    fetchProductsByCriteria: fetchProductsByCriteria
+    fetchProductsByCriteria: fetchProductsByCriteria,
+    Product
 }

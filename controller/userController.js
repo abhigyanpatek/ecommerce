@@ -56,7 +56,28 @@ const login = (req, res) => {
     })
 }
 
+const logout = (req, res) => {
+    if(!req.headers['authorization']){
+        return res.status(400).send({
+            message: "Token is missing!"
+        });
+    }
+    authService.deleteToken(req.headers['authorization'])
+    .then(response => {
+        if(response.status === 200){
+            res.status(200).send({
+                message: "You logged out successfully!"
+            });
+        } else if(response.status === 401){
+            res.status(401).send(response.data);
+        }
+    }).catch(error => {
+        res.status(500).send(error.response.data);
+    })
+}
+
 module.exports = {
     registerUser: registerUser,
-    login: login
+    login: login,
+    logout
 }

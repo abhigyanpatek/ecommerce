@@ -19,7 +19,15 @@ const validateToken = async (bearerToken) => {
     return await axios.get("/auth/validate", {headers, validateStatus});
 }
 
+const deleteToken = async (bearerToken) => {
+    const headers = {
+        "Authorization": bearerToken
+    }
+    return await axios.get("/auth/deleteUserToken", {headers});
+}
+
 module.exports = {
     getAuthToken,
-    validateToken
+    validateToken,
+    deleteToken
 }
