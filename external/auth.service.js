@@ -1,5 +1,5 @@
 const axios = require('axios').default;
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = process.env.AUTH_API_BASE_URL;
 
 const getAuthToken = async (payload) => {
     const headers = {
